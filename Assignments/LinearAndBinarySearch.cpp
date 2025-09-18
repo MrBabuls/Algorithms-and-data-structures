@@ -1,146 +1,89 @@
+#include "LinearAndBinarySearch.h"
 #include <iostream>
 #include <iomanip>
-#include <vector>
 #include <cstdlib>
 #include <chrono>
+#include <string>
 
-int linearSearch(int* array, int n, int x)
-{
-    // Iterate through the array from start to end
-    for (int i = 0; i < n; i++)
-    {
-        // If the element matches x, return its index
-        if (array[i] == x)
-        {
-            return i;
-        }
+using namespace std;
+
+int linearSearch(int* array, int n, int x) {
+    for (int i = 0; i < n; i++) {
+        if (array[i] == x) return i;
     }
-
-    // If the element was not found, return -1
     return -1;
 }
 
-int binarySearch(int* array, int n, int x)
-{
-    int start = 0;
-    int end = n - 1;
-
-    // Repeat until the search space is empty
-    while (start <= end)
-    {
+int binarySearch(int* array, int n, int x) {
+    int start = 0, end = n - 1;
+    while (start <= end) {
         int mid = (start + end) / 2;
-
-        // If the element at mid matches x, return its index
-        if (array[mid] == x)
-        {
-            return mid;
-        }
-        // If the element at mid is smaller, search the right half
-        else if (array[mid] < x)
-        {
-            start = mid + 1;
-        }
-        // Otherwise, search the left half
-        else
-        {
-            end = mid - 1;
-        }
+        if (array[mid] == x) return mid;
+        else if (array[mid] < x) start = mid + 1;
+        else end = mid - 1;
     }
-
     return -1;
 }
 
-void measurePerformance(const std::vector<int>& sizes, int repeats)
-{
-    using namespace std::chrono;
+void measurePerformance(const vector<int>& sizes, int repeats) {
+    using namespace chrono;
 
-    std::cout << "\n--- Performance measurement for linear and binary search ---" << std::endl;
-
-    for (int n : sizes)
-    {
-        std::vector<int> array(n);
-
-        for (int i = 0; i < n; i++)
-        {
-            array[i] = i;
-        }
-
+    for (int n : sizes) {
+        vector<int> array(n);
+        for (int i = 0; i < n; i++) array[i] = i;
         int target = rand() % n;
 
-        // Linear search timing
         auto start = high_resolution_clock::now();
-        for (int i = 0; i < repeats; i++)
-        {
-            linearSearch(array.data(), n, target);
-        }
+        for (int i = 0; i < repeats; i++) linearSearch(array.data(), n, target);
         auto end = high_resolution_clock::now();
         auto linearTime = duration_cast<microseconds>(end - start).count();
 
-        // Binary search timing
         start = high_resolution_clock::now();
-        for (int i = 0; i < repeats; i++)
-        {
-            binarySearch(array.data(), n, target);
-        }
+        for (int i = 0; i < repeats; i++) binarySearch(array.data(), n, target);
         end = high_resolution_clock::now();
         auto binaryTime = duration_cast<microseconds>(end - start).count();
 
-        std::cout << "\nArray size: " << n << std::endl;
-        std::cout << "Linear search average time: " << (double)linearTime / repeats << " ms" << std::endl;
-        std::cout << "Binary search average time: " << (double)binaryTime / repeats << " ms" << std::endl;
+        cout << "Array size: " << n << "\n"
+            << "Linear avg: " << (double)linearTime / repeats << " ms\n"
+            << "Binary avg: " << (double)binaryTime / repeats << " ms\n\n";
     }
 }
 
-void printArrayContents(int* array, int n)
-{
-    std::cout << "Print array contents" << std::endl;
-    std::cout << "-------------------" << std::endl;
-    for (int i = 0; i < n; i++)
-    {
-        std::cout << "| array[" << std::setw(2) << i << "] "
-            << std::setw(5) << array[i] << " |" << std::endl;
+void printArrayContents(int* array, int n) {
+    for (int i = 0; i < n; i++) {
+        cout << "| array[" << setw(2) << i << "] "
+            << setw(5) << array[i] << " |\n";
     }
-    std::cout << "-------------------" << std::endl;
-    std::cout << std::endl;
+    cout << endl;
 }
 
-int main()
-{
+void LinearAndBinarySearch() {
     const int size = 20;
     int* array = new int[size];
+    for (int i = 0; i < size; i++) array[i] = i;
 
-    // Initialize array with values 0 to 19
-    for (int i = 0; i < size; i++)
-    {
-        array[i] = i;
-    }
+    cout << "Programming task 2.1. Implement the linear search and binary search.\n\n";
 
     printArrayContents(array, size);
 
-    // Number to search for
     int x = 12;
-    std::cout << "Search for " << x << " in the array." << std::endl;
-    std::cout << "" << std::endl;
+    cout << "Search for " << x << " in the array.\n\n";
 
-    // Linear search
     int indexLinear = linearSearch(array, size, x);
-    if (indexLinear != -1)
-        std::cout << "Linear search: number found at index " << indexLinear << std::endl;
-    else
-        std::cout << "Linear search: number not found" << std::endl;
+    cout << "Linear search: "
+        << (indexLinear != -1 ? "found at index " + to_string(indexLinear) : "not found")
+        << endl;
 
-    // Binary search
     int indexBinary = binarySearch(array, size, x);
-    if (indexBinary != -1)
-        std::cout << "Binary search: number found at index " << indexBinary << std::endl;
-    else
-        std::cout << "Binary search: number not found" << std::endl;
+    cout << "Binary search: "
+        << (indexBinary != -1 ? "found at index " + to_string(indexBinary) : "not found")
+        << endl;
 
-    delete[] array; // Free allocated memory
+    cout << " " << endl;
 
-    std::vector<int> testSizes = { 100000, 1000000, 10000000 };
-    int repeats = 20;
-    measurePerformance(testSizes, repeats);
+    delete[] array;
 
-    return 0;
+    cout << "Programming task 2.2. Measure the performance of linear and binary search.\n\n";
+
+    measurePerformance({ 100000, 1000000, 10000000 }, 20);
 }
