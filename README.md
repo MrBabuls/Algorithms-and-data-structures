@@ -8,4 +8,4 @@ In this project, each weekly course task is implemented in its **own `.h` and `.
 
 ## Tasks
 
-- [Programming Task 2.1 – Linear and Binary Search](LinearAndBinarySearch.cpp)  
+- [Programming Task 2 – Linear and Binary Search](Assignments/LinearAndBinarySearch.cpp)  
