@@ -19,10 +19,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="FibonacciAndAckermann.cpp" />
     <ClCompile Include="LinearAndBinarySearch.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="FibonacciAndAckermann.h" />
     <ClInclude Include="LinearAndBinarySearch.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

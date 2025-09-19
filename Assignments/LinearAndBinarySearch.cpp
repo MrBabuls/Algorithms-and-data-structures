@@ -6,17 +6,22 @@
 #include <string>
 
 using namespace std;
+using namespace chrono;
 
-int linearSearch(int* array, int n, int x) {
-    for (int i = 0; i < n; i++) {
+int linearSearch(int* array, int n, int x) 
+{
+    for (int i = 0; i < n; i++) 
+    {
         if (array[i] == x) return i;
     }
     return -1;
 }
 
-int binarySearch(int* array, int n, int x) {
+int binarySearch(int* array, int n, int x) 
+{
     int start = 0, end = n - 1;
-    while (start <= end) {
+    while (start <= end) 
+    {
         int mid = (start + end) / 2;
         if (array[mid] == x) return mid;
         else if (array[mid] < x) start = mid + 1;
@@ -25,10 +30,10 @@ int binarySearch(int* array, int n, int x) {
     return -1;
 }
 
-void measurePerformance(const vector<int>& sizes, int repeats) {
-    using namespace chrono;
-
-    for (int n : sizes) {
+void measurePerformance(const vector<int>& sizes, int repeats) 
+{
+    for (int n : sizes) 
+    {
         vector<int> array(n);
         for (int i = 0; i < n; i++) array[i] = i;
         int target = rand() % n;
@@ -49,8 +54,10 @@ void measurePerformance(const vector<int>& sizes, int repeats) {
     }
 }
 
-void printArrayContents(int* array, int n) {
-    for (int i = 0; i < n; i++) {
+void printArrayContents(int* array, int n) 
+{
+    for (int i = 0; i < n; i++) 
+    {
         cout << "| array[" << setw(2) << i << "] "
             << setw(5) << array[i] << " |\n";
     }
@@ -60,7 +67,10 @@ void printArrayContents(int* array, int n) {
 void LinearAndBinarySearch() {
     const int size = 20;
     int* array = new int[size];
-    for (int i = 0; i < size; i++) array[i] = i;
+    for (int i = 0; i < size; i++)
+    {
+        array[i] = i;
+    }
 
     cout << "Programming task 2.1. Implement the linear search and binary search.\n\n";
 
