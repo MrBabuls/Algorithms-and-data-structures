@@ -9,8 +9,8 @@ int main()
     int choice;
 
     cout << "Select a programming task to run:\n";
-    cout << "1 - Linear and Binary Search\n";
-    cout << "2 - Fibonacci numbers (iterative)\n";
+    cout << "1 - Programming tasks 2\n";
+    cout << "2 - Programming tasks 3\n";
     cout << "0 - Exit\n";
     cout << "Enter your choice: ";
     cin >> choice;
@@ -23,6 +23,7 @@ int main()
     case 2:
         cout << "\n" << endl;
         RunFibonacci();
+        RunAckermann();
         break;
     case 0:
         cout << "Exiting program.\n";

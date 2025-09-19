@@ -58,5 +58,32 @@ void RunFibonacci()
     cout << "--- Optimized Fibonacci ---\n";
     long long fib2 = fib_optimized(n);
     cout << "Fibonacci number f(" << n << ") = " << fib2 << "\n";
-    cout << "Memory used: " << 2 * sizeof(long long) << " bytes\n";
+    cout << "Memory used: " << 2 * sizeof(long long) << " bytes\n\n";
+}
+
+unsigned long long Ackermann(unsigned int m, unsigned int n)
+{
+    if (m == 0)
+        return n + 1;
+    else if (n == 0)
+        return Ackermann(m - 1, 1);
+    else
+        return Ackermann(m - 1, Ackermann(m, n - 1));
+}
+
+void RunAckermann()
+{
+    cout << "Programming task 3.2. Compute Ackermann function.\n\n";
+
+    unsigned int m = 2, n = 2;
+    cout << "Ackermann A(" << m << "," << n << ") = " << Ackermann(m, n) << "\n";
+
+    m = 2; n = 3;
+    cout << "Ackermann A(" << m << "," << n << ") = " << Ackermann(m, n) << "\n";
+
+    m = 3; n = 2;
+    cout << "Ackermann A(" << m << "," << n << ") = " << Ackermann(m, n) << "\n";
+
+    m = 3; n = 4;
+    cout << "Ackermann A(" << m << "," << n << ") = " << Ackermann(m, n) << "\n";
 }
