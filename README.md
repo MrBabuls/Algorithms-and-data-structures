@@ -8,4 +8,5 @@ In this project, each weekly course task is implemented in its **own `.h` and `.
 
 ## Tasks
 
-- [Programming Task 2 – Linear and Binary Search](Assignments/LinearAndBinarySearch.cpp)  
+- [Programming Task 2 – Linear and Binary Search](Assignments/LinearAndBinarySearch.cpp)
+- [Programming Task 3 – Fibonacci and Ackermann](Assignments/FibonacciAndAckermann.cpp)  
