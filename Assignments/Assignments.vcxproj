@@ -22,10 +22,12 @@
     <ClCompile Include="FibonacciAndAckermann.cpp" />
     <ClCompile Include="LinearAndBinarySearch.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="SimpleSort.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FibonacciAndAckermann.h" />
     <ClInclude Include="LinearAndBinarySearch.h" />
+    <ClInclude Include="SimpleSort.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
