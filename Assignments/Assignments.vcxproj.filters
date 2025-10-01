@@ -24,12 +24,18 @@
     <ClCompile Include="FibonacciAndAckermann.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SimpleSort.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LinearAndBinarySearch.h">
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="FibonacciAndAckermann.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SimpleSort.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

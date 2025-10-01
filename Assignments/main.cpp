@@ -1,5 +1,6 @@
 #include "LinearAndBinarySearch.h"
 #include "FibonacciAndAckermann.h"
+#include "SimpleSort.h"
 #include <iostream>
 
 using namespace std;
@@ -11,6 +12,7 @@ int main()
     cout << "Select a programming task to run:\n";
     cout << "1 - Programming tasks 2\n";
     cout << "2 - Programming tasks 3\n";
+    cout << "3 - Programming tasks 4\n";
     cout << "0 - Exit\n";
     cout << "Enter your choice: ";
     cin >> choice;
@@ -24,6 +26,10 @@ int main()
         cout << "\n" << endl;
         RunFibonacci();
         RunAckermann();
+        break;
+    case 3:
+        cout << "\n" << endl;
+        // Add SimpleSort funktio
         break;
     case 0:
         cout << "Exiting program.\n";
