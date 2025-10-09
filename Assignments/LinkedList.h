@@ -15,5 +15,10 @@ public:
     LinkedList();
     ~LinkedList();
 
-    void testInit();
+    bool IsEmpty();
+    void Insert(int value);
+    void InsertEnd(int value);
+    void Print();
+    
+    void testTask5_1();
 };
