@@ -19,6 +19,10 @@ public:
     void Insert(int value);
     void InsertEnd(int value);
     void Print();
+    bool Find(int value);
+    bool Delete(int value);
+    void Reverse();
     
-    void testTask5_1();
+    void task5_1();
+    void task5_2();
 };

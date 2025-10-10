@@ -28,7 +28,6 @@ LinkedList::~LinkedList()
     }
 }
 
-// Task 5.1 Methods
 bool LinkedList::IsEmpty() 
 {
     return head->next == nullptr;
@@ -62,7 +61,7 @@ void LinkedList::Print()
 }
 
 // Task 5.1 Function
-void LinkedList::testTask5_1() 
+void LinkedList::task5_1() 
 {
     cout << "=== Task 5.1: Linked List Operations ===" << endl;
 
@@ -80,4 +79,70 @@ void LinkedList::testTask5_1()
     list2.Print();
 
     cout << "IsEmpty() for first list: " << (IsEmpty() ? "Yes" : "No") << endl;
+}
+
+// Task 5.2 Methods
+bool LinkedList::Find(int value) 
+{
+    Node* temp = head->next;
+    while (temp) 
+    {
+        if (temp->data == value)
+            return true;
+        temp = temp->next;
+    }
+    return false;
+}
+
+bool LinkedList::Delete(int value) 
+{
+    Node* prev = head;
+    Node* curr = head->next;
+    while (curr) 
+    {
+        if (curr->data == value) 
+        {
+            prev->next = curr->next;
+            delete curr;
+            return true;
+        }
+        prev = curr;
+        curr = curr->next;
+    }
+    return false;
+}
+
+void LinkedList::Reverse() 
+{
+    Node* prev = nullptr;
+    Node* curr = head->next;
+    Node* next = nullptr;
+    while (curr) 
+    {
+        next = curr->next;
+        curr->next = prev;
+        prev = curr;
+        curr = next;
+    }
+    head->next = prev;
+}
+
+void LinkedList::task5_2() 
+{
+    LinkedList list;
+    for (int i = 1; i <= 10; i++)
+        list.Insert(i);
+
+    cout << "\n=== Task 5.2: Find, Delete, Reverse ===" << endl;
+    list.Print();
+
+    cout << "Find(5): " << (list.Find(5) ? "true" : "false") << endl;
+    cout << "Find(100): " << (list.Find(100) ? "true" : "false") << endl;
+
+    cout << "Delete(5): " << (list.Delete(5) ? "true" : "false") << endl;
+    list.Print();
+
+    cout << "Reversing list..." << endl;
+    list.Reverse();
+    list.Print();
 }

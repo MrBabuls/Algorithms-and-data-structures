@@ -37,7 +37,8 @@ int main()
         break;
     case 4:
         cout << "\n" << endl;
-        list.testTask5_1();
+        list.task5_1();
+        list.task5_2();
         break;
     case 0:
         cout << "Exiting program.\n";
