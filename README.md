@@ -11,3 +11,4 @@ In this project, each weekly course task is implemented in its **own `.h` and `.
 - [Programming Task 2 – Linear and Binary Search](Assignments/LinearAndBinarySearch.cpp)
 - [Programming Task 3 – Fibonacci and Ackermann](Assignments/FibonacciAndAckermann.cpp)
 - [Programming tasks 4 - Sorting algorithm](Assignments/SimpleSort.cpp)
+- [Programming tasks 5 - List ADT](Assignments/LinkedList.cpp)
