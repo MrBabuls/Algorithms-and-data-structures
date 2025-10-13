@@ -127,22 +127,32 @@ void LinkedList::Reverse()
     head->next = prev;
 }
 
-void LinkedList::task5_2() 
+void LinkedList::task5_2()
 {
     LinkedList list;
-    for (int i = 1; i <= 10; i++)
+    for (int i = 1; i <= 99; i++)
         list.Insert(i);
 
     cout << "\n=== Task 5.2: Find, Delete, Reverse ===" << endl;
     list.Print();
 
-    cout << "Find(5): " << (list.Find(5) ? "true" : "false") << endl;
+    cout << "\nFind(42): " << (list.Find(42) ? "true" : "false") << endl;
+    cout << "Find(66): " << (list.Find(66) ? "true" : "false") << endl;
     cout << "Find(100): " << (list.Find(100) ? "true" : "false") << endl;
 
-    cout << "Delete(5): " << (list.Delete(5) ? "true" : "false") << endl;
+    cout << "\nDelete(77): " << (list.Delete(77) ? "true" : "false") << endl;
+    cout << "Delete(21): " << (list.Delete(21) ? "true" : "false") << endl;
+    cout << "Delete(-1): " << (list.Delete(-1) ? "true" : "false") << endl;
+
+    cout << "\nList after deletions:" << endl;
     list.Print();
 
-    cout << "Reversing list..." << endl;
+    cout << "\nReversing list..." << endl;
     list.Reverse();
     list.Print();
+
+    for (int i = 1; i <= 99; i++)
+        list.Delete(i);
+
+    cout << "\nIsEmpty(): " << (list.IsEmpty() ? "Yes" : "No") << endl;
 }
