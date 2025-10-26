@@ -1,11 +1,5 @@
 #pragma once
-
-class Node {
-public:
-	int data;
-	Node* next;
-	Node(int value);
-};
+#include "Node.h"
 
 class LinkedList {
 private:
@@ -23,6 +17,6 @@ public:
     bool Delete(int value);
     void Reverse();
     
-    void task5_1();
-    void task5_2();
+    void task4_1();
+    void task4_2();
 };

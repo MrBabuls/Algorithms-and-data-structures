@@ -20,16 +20,24 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="FibonacciAndAckermann.cpp" />
+    <ClCompile Include="HtmlChecker.cpp" />
     <ClCompile Include="LinearAndBinarySearch.cpp" />
     <ClCompile Include="LinkedList.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="SimpleSort.cpp" />
+    <ClCompile Include="Stack.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FibonacciAndAckermann.h" />
+    <ClInclude Include="HtmlChecker.h" />
     <ClInclude Include="LinearAndBinarySearch.h" />
     <ClInclude Include="LinkedList.h" />
+    <ClInclude Include="Node.h" />
     <ClInclude Include="SimpleSort.h" />
+    <ClInclude Include="Stack.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="index.html" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

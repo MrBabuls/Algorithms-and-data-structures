@@ -2,6 +2,8 @@
 #include "FibonacciAndAckermann.h"
 #include "SimpleSort.h"
 #include "LinkedList.h"
+#include "Stack.h"
+#include "HTMLChecker.h"
 
 #include <iostream>
 
@@ -11,12 +13,17 @@ int main()
 {
     int choice;
     LinkedList list;
+    Stack stack;
+    HTMLChecker checker;
+    string filename;
 
     cout << "Select a programming task to run:\n";
-    cout << "1 - Programming tasks 2\n";
-    cout << "2 - Programming tasks 3\n";
-    cout << "3 - Programming tasks 4\n";
-    cout << "4 - Programming tasks 5\n";
+    cout << "1 - Programming tasks 1\n";
+    cout << "2 - Programming tasks 2\n";
+    cout << "3 - Programming tasks 3\n";
+    cout << "4 - Programming tasks 4\n";
+    cout << "5 - Programming tasks 5\n";
+    cout << "6 - Programming tasks 6\n";
     cout << "0 - Exit\n";
     cout << "Enter your choice: ";
     cin >> choice;
@@ -37,8 +44,24 @@ int main()
         break;
     case 4:
         cout << "\n" << endl;
-        list.task5_1();
-        list.task5_2();
+        list.task4_1();
+        list.task4_2();
+        break;
+    case 5:
+        cout << "\n" << endl;
+        stack.FillStack();
+        stack.Pop();
+        stack.Print();
+        break;
+    case 6:
+        cout << "\n" << endl;
+        cout << "Enter HTML file name (e.g. index.html): ";
+        cin >> filename;
+        {
+            bool ok = checker.checkFile(filename);
+            if (ok) cout << "HTML is valid!\n";
+            else cout << "HTML has errors!\n";
+        }
         break;
     case 0:
         cout << "Exiting program.\n";

@@ -30,6 +30,12 @@
     <ClCompile Include="LinkedList.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Stack.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="HtmlChecker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LinearAndBinarySearch.h">
@@ -44,5 +50,19 @@
     <ClInclude Include="LinkedList.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="Stack.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Node.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HtmlChecker.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="index.html">
+      <Filter>Source Files</Filter>
+    </None>
   </ItemGroup>
 </Project>
