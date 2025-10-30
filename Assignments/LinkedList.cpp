@@ -61,7 +61,7 @@ void LinkedList::Print()
 }
 
 // Task 5.1 Function
-void LinkedList::task4_1() 
+void LinkedList::task5_1() 
 {
     cout << "=== Task 5.1: Linked List Operations ===" << endl;
 
@@ -127,7 +127,7 @@ void LinkedList::Reverse()
     head->next = prev;
 }
 
-void LinkedList::task4_2()
+void LinkedList::task5_2()
 {
     LinkedList list;
     for (int i = 1; i <= 99; i++)

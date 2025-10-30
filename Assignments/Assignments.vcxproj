@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BST.cpp" />
     <ClCompile Include="FibonacciAndAckermann.cpp" />
     <ClCompile Include="HtmlChecker.cpp" />
     <ClCompile Include="LinearAndBinarySearch.cpp" />
@@ -28,6 +29,8 @@
     <ClCompile Include="Stack.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BST.h" />
+    <ClInclude Include="BSTNode.h" />
     <ClInclude Include="FibonacciAndAckermann.h" />
     <ClInclude Include="HtmlChecker.h" />
     <ClInclude Include="LinearAndBinarySearch.h" />

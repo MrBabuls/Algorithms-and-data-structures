@@ -36,6 +36,9 @@
     <ClCompile Include="HtmlChecker.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="BST.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LinearAndBinarySearch.h">
@@ -57,6 +60,12 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="HtmlChecker.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BSTNode.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BST.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -17,6 +17,6 @@ public:
     bool Delete(int value);
     void Reverse();
     
-    void task4_1();
-    void task4_2();
+    void task5_1();
+    void task5_2();
 };
