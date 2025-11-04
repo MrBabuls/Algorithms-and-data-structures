@@ -80,6 +80,14 @@ int main()
 
             cout << "\nNodes: " << tree.countNodes()
                 << ", Leaves: " << tree.countLeaves() << endl;
+            cout << "\nRemoving 10...\n";
+            if (tree.remove(10)) cout << "10 removed successfully.\n";
+            else cout << "10 not found.\n";
+
+            tree.print();
+            cout << "\nNodes: " << tree.countNodes()
+                << ", Leaves: " << tree.countLeaves() << endl;
+
             break;
         }
 

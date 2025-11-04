@@ -63,6 +63,61 @@ void BST::print(BSTNode* node, int space) const
     }
 }
 
+BSTNode* BST::remove(BSTNode* node, int key, bool& success) 
+{
+    if (!node) 
+    {
+        success = false;
+        return nullptr;
+    }
+
+    if (key < node->data) 
+    {
+        node->left = remove(node->left, key, success);
+    }
+    else if (key > node->data) {
+        node->right = remove(node->right, key, success);
+    }
+    else 
+    {
+        success = true;
+
+        if (!node->left && !node->right) 
+        {
+            delete node;
+            return nullptr;
+        }
+        else if (!node->left) 
+        {
+            BSTNode* temp = node->right;
+            delete node;
+            return temp;
+        }
+        else if (!node->right) 
+        {
+            BSTNode* temp = node->left;
+            delete node;
+            return temp;
+        }
+        else 
+        {
+            BSTNode* minNode = node->right;
+            while (minNode->left) minNode = minNode->left;
+
+            node->data = minNode->data;
+            node->right = remove(node->right, minNode->data, success);
+        }
+    }
+    return node;
+}
+
+bool BST::remove(int key) 
+{
+    bool success = false;
+    root = remove(root, key, success);
+    return success;
+}
+
 BST BST::createSampleTree() 
 {
     BST tree;
