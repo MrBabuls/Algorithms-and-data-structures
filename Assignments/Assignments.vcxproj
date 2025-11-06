@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="BST.cpp" />
     <ClCompile Include="FibonacciAndAckermann.cpp" />
+    <ClCompile Include="Heap.cpp" />
     <ClCompile Include="HtmlChecker.cpp" />
     <ClCompile Include="LinearAndBinarySearch.cpp" />
     <ClCompile Include="LinkedList.cpp" />
@@ -32,6 +33,7 @@
     <ClInclude Include="BST.h" />
     <ClInclude Include="BSTNode.h" />
     <ClInclude Include="FibonacciAndAckermann.h" />
+    <ClInclude Include="Heap.h" />
     <ClInclude Include="HtmlChecker.h" />
     <ClInclude Include="LinearAndBinarySearch.h" />
     <ClInclude Include="LinkedList.h" />

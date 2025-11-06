@@ -5,6 +5,7 @@
 #include "Stack.h"
 #include "HTMLChecker.h"
 #include "BST.h"
+#include "Heap.h"
 
 #include <iostream>
 using namespace std;
@@ -16,6 +17,7 @@ int main()
     Stack stack;
     HTMLChecker checker;
     string filename;
+    Heap heap;
 
     while (true)
     {
@@ -27,6 +29,7 @@ int main()
         cout << "5 - Programming tasks 5\n";
         cout << "6 - Programming tasks 6\n";
         cout << "7 - Programming tasks 7\n";
+        cout << "8 - Programming tasks 8\n";
         cout << "0 - Exit\n";
         cout << "Enter your choice: ";
         cin >> choice;
@@ -90,7 +93,25 @@ int main()
 
             break;
         }
-
+        case 8:
+            cout << "\n" << endl;
+            heap.insert(17);
+            heap.insert(11);
+            heap.insert(6);
+            heap.insert(14);
+            heap.insert(22);
+            heap.insert(8);
+            heap.insert(1);
+            heap.insert(16);
+            heap.insert(10);
+            heap.insert(19);
+            heap.insert(12);
+            heap.insert(3);
+            heap.insert(5);
+            heap.insert(15);
+            heap.insert(13);
+            heap.print();
+            break;
         case 0:
             cout << "Exiting program.\n";
             return 0;
