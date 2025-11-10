@@ -15,46 +15,77 @@ Heap::Heap()
 bool Heap::insert(int value)
 {
     int heapSize = heapArray[0];
-    if (heapArray[0] < MAX_HEAP_SIZE)
+    if (heapSize < MAX_HEAP_SIZE) 
     {
-        // 1. Insert new value at the end 
         heapArray[heapSize + 1] = value;
-        // 2. Lift the value up to correct spot 
-        // - Stop when parent is smaller or we are at root 
-        // <--> Continue currentIndex > 1 and 
-        //      heapArray[parentIndex] > value; 
         int currentIndex = heapSize + 1;
         int parentIndex = currentIndex / 2;
-        while (currentIndex > 1 &&
-            heapArray[parentIndex] > value)
+
+        while (currentIndex > 1 && heapArray[parentIndex] > value) 
         {
-            // Swap values and update indices
             heapArray[currentIndex] = heapArray[parentIndex];
-
-            // Update value at parentIndex
             heapArray[parentIndex] = value;
-
-            // Update indices
             currentIndex = parentIndex;
             parentIndex = currentIndex / 2;
         }
-        // 3. Accumulate heap size 
-        heapArray[0]++;
+
+        heapArray[0]++; // Increase heap size
         return true;
     }
-    else
-        return false;
+    return false; // Heap full
 }
 
+// Delete minimum element (root) from min-heap
+int Heap::delMin() 
+{
+    int heapSize = heapArray[0];
+    if (heapSize == 0) 
+    {
+        cout << "Heap is empty!" << endl;
+        return -1; // or throw exception
+    }
 
-void Heap::print()
+    int minValue = heapArray[1]; // root
+    int lastValue = heapArray[heapSize];
+    heapArray[0]--; // decrease size
+    heapArray[1] = lastValue;
+
+    // Heapify down
+    int currentIndex = 1;
+    while (true) 
+    {
+        int left = 2 * currentIndex;
+        int right = 2 * currentIndex + 1;
+        int smallest = currentIndex;
+
+        if (left <= heapArray[0] && heapArray[left] < heapArray[smallest])
+            smallest = left;
+        if (right <= heapArray[0] && heapArray[right] < heapArray[smallest])
+            smallest = right;
+
+        if (smallest != currentIndex) 
+        {
+            swap(heapArray[currentIndex], heapArray[smallest]);
+            currentIndex = smallest;
+        }
+        else 
+        {
+            break;
+        }
+    }
+
+    return minValue;
+}
+
+// Print heap contents
+void Heap::print() 
 {
     cout << "Heap size: " << heapArray[0] << endl;
     cout << "[";
-    for (int i = 1; i <= heapArray[0]; i++)
+    for (int i = 1; i <= heapArray[0]; i++) 
     {
-        cout << heapArray[i] << ",";
+        cout << heapArray[i];
+        if (i != heapArray[0]) cout << ",";
     }
-    cout << heapArray[heapArray[0]];
     cout << "]" << endl;
 }

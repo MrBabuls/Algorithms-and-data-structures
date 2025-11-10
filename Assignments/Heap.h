@@ -6,6 +6,7 @@ public:
 	Heap();
 	~Heap() {}
 	bool insert(int value);
+	int delMin();
 	void print();
 
 	static Heap createSampleTree();
