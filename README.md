@@ -14,4 +14,4 @@ In this project, each weekly course task is implemented in its **own `.h` and `.
 - [Programming tasks 5 - List ADT](Assignments/LinkedList.cpp)
 - [Programming tasks 6 - HTML-checker](Assignments/HtmlChecker.cpp)
 - [Programming tasks 7 - BST](Assignments/BST.cpp)
-- [Programming tasks 7 - Heap](Assignments/Heap.cpp)
+- [Programming tasks 8 - Heap](Assignments/Heap.cpp)
