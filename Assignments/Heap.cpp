@@ -98,7 +98,6 @@ void Heap::runHeapSortSpeedTest()
 {
     cout << "\n--- Programming Task 7.2: Heap Sort Speed ---\n";
 
-    // Eri testikoot
     vector<int> sizes = { 100000, 1000000, 10000000 };
 
     for (int n : sizes) {
@@ -114,16 +113,12 @@ void Heap::runHeapSortSpeedTest()
 
         cout << "Sorting..." << endl;
 
-        // Aloita ajanotto
         auto start = high_resolution_clock::now();
 
-        // Tee heapsort vektorilla
-        // 1. Luo heap
         vector<int> heap;
-        heap.push_back(0); // indeksi 0 varattu koolle
+        heap.push_back(0);
         int heapSize = 0;
 
-        // Insert kaikki dataan
         for (int value : data) {
             heapSize++;
             if (heapSize >= (int)heap.size())
@@ -140,7 +135,6 @@ void Heap::runHeapSortSpeedTest()
             }
         }
 
-        // 2. Poista kaikki delMin()-periaatteella
         vector<int> sorted;
         sorted.reserve(n);
 
@@ -171,12 +165,10 @@ void Heap::runHeapSortSpeedTest()
             }
         }
 
-        // Lopeta ajanotto
         auto end = high_resolution_clock::now();
         auto duration = duration_cast<milliseconds>(end - start).count();
 
         cout << "Time used: " << duration << " ms" << endl;
     }
-
     cout << "\nHeap sort complexity: O(n log n)" << endl;
 }
