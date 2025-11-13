@@ -11,6 +11,8 @@ public:
 
 	static Heap createSampleTree();
 
+	void runHeapSortSpeedTest();
+
 private:
 	int heapArray[MAX_HEAP_SIZE + 1];
 };

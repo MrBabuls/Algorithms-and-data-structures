@@ -1,8 +1,12 @@
 #include"Heap.h"
-
+#include <vector>
+#include <chrono>
+#include <cstdlib>
+#include <ctime>
 #include <iostream>
 
 using namespace std;
+using namespace std::chrono;
 
 Heap::Heap()
 {
@@ -88,4 +92,91 @@ void Heap::print()
         if (i != heapArray[0]) cout << ",";
     }
     cout << "]" << endl;
+}
+
+void Heap::runHeapSortSpeedTest()
+{
+    cout << "\n--- Programming Task 7.2: Heap Sort Speed ---\n";
+
+    // Eri testikoot
+    vector<int> sizes = { 100000, 1000000, 10000000 };
+
+    for (int n : sizes) {
+        cout << "\nCreating array with " << n << " random integers..." << endl;
+
+        vector<int> data;
+        data.reserve(n);
+        srand((unsigned)time(0));
+
+        for (int i = 0; i < n; i++) {
+            data.push_back(rand());
+        }
+
+        cout << "Sorting..." << endl;
+
+        // Aloita ajanotto
+        auto start = high_resolution_clock::now();
+
+        // Tee heapsort vektorilla
+        // 1. Luo heap
+        vector<int> heap;
+        heap.push_back(0); // indeksi 0 varattu koolle
+        int heapSize = 0;
+
+        // Insert kaikki dataan
+        for (int value : data) {
+            heapSize++;
+            if (heapSize >= (int)heap.size())
+                heap.push_back(value);
+            else
+                heap[heapSize] = value;
+
+            int current = heapSize;
+            int parent = current / 2;
+            while (current > 1 && heap[parent] > heap[current]) {
+                swap(heap[parent], heap[current]);
+                current = parent;
+                parent = current / 2;
+            }
+        }
+
+        // 2. Poista kaikki delMin()-periaatteella
+        vector<int> sorted;
+        sorted.reserve(n);
+
+        while (heapSize > 0) {
+            int minValue = heap[1];
+            sorted.push_back(minValue);
+            heap[1] = heap[heapSize];
+            heapSize--;
+
+            int current = 1;
+            while (true) {
+                int left = 2 * current;
+                int right = 2 * current + 1;
+                int smallest = current;
+
+                if (left <= heapSize && heap[left] < heap[smallest])
+                    smallest = left;
+                if (right <= heapSize && heap[right] < heap[smallest])
+                    smallest = right;
+
+                if (smallest != current) {
+                    swap(heap[current], heap[smallest]);
+                    current = smallest;
+                }
+                else {
+                    break;
+                }
+            }
+        }
+
+        // Lopeta ajanotto
+        auto end = high_resolution_clock::now();
+        auto duration = duration_cast<milliseconds>(end - start).count();
+
+        cout << "Time used: " << duration << " ms" << endl;
+    }
+
+    cout << "\nHeap sort complexity: O(n log n)" << endl;
 }
