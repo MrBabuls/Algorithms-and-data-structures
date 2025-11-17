@@ -27,6 +27,7 @@
     <ClCompile Include="LinkedList.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="SimpleSort.cpp" />
+    <ClCompile Include="Sorts.cpp" />
     <ClCompile Include="Stack.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -39,6 +40,7 @@
     <ClInclude Include="LinkedList.h" />
     <ClInclude Include="Node.h" />
     <ClInclude Include="SimpleSort.h" />
+    <ClInclude Include="Sorts.h" />
     <ClInclude Include="Stack.h" />
   </ItemGroup>
   <ItemGroup>

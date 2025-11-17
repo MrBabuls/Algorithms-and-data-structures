@@ -6,6 +6,7 @@
 #include "HTMLChecker.h"
 #include "BST.h"
 #include "Heap.h"
+#include "Sorts.h"
 
 #include <iostream>
 #include <string>
@@ -78,9 +79,9 @@ void runTask7()
         << ", Leaves: " << tree.countLeaves() << endl;
 }
 
-void runTask8() 
+void runTask8_1() 
 {
-    cout << "\n--- Task 8: Heap Test ---\n" << endl;
+    cout << "\n--- Task 8.1: Heap Test ---\n" << endl;
     Heap heap;
     int data[] = { 17, 11, 6, 14, 22, 8, 1, 16, 10, 19, 12, 3, 5, 15, 13 };
 
@@ -109,11 +110,17 @@ void runTask8()
     cout << "]" << endl;
 }
 
-void runTask9() 
+void runTask8_2() 
 {
-    cout << "\n--- Task 9: Heap Sort Speed Test ---\n" << endl;
+    cout << "\n--- Task 8.2: Heap Sort Speed Test ---\n" << endl;
     Heap heap;
     heap.runHeapSortSpeedTest();
+}
+
+void runTask9()
+{
+    cout << "\n--- Task 9: Sorting Performance Test ---\n" << endl;
+    RunTask9();
 }
 
 int main() 
@@ -130,8 +137,9 @@ int main()
         cout << "5 - Programming tasks 5\n";
         cout << "6 - Programming tasks 6\n";
         cout << "7 - Programming tasks 7\n";
-        cout << "8 - Programming tasks 8\n";
-        cout << "9 - Programming tasks 9 (Heap sort speed)\n";
+        cout << "8 - Programming tasks 8.1\n";
+        cout << "9 - Programming tasks 8.2 (Heap sort speed)\n";
+        cout << "10 - Programming tasks 9\n";
         cout << "0 - Exit\n";
         cout << "Enter your choice: ";
         cin >> choice;
@@ -145,8 +153,9 @@ int main()
         case 5: runTask5(); break;
         case 6: runTask6(); break;
         case 7: runTask7(); break;
-        case 8: runTask8(); break;
-        case 9: runTask9(); break;
+        case 8: runTask8_1(); break;
+        case 9: runTask8_2(); break;
+        case 10: runTask9(); break;
         case 0:
             cout << "Exiting program.\n";
             return 0;
